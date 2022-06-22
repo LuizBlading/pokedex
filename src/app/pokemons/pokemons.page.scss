@@ -1,0 +1,48 @@
+ion-content{
+    // background-color: #000;
+    .container{
+        margin: 5px;
+        padding: 15px;
+    }
+
+    ion-title{
+        text-align: center;
+    }
+
+    .title{
+        text-transform: capitalize;
+    }
+
+    ion-input{
+        // margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        padding: 15px;
+    }
+
+    ion-button{
+        margin: 15px 0;
+        border-radius: 20px;
+    }
+
+    ion-card{
+        border-radius: 15px;
+        // background-color: #982237;
+        display: grid;
+        grid-template-columns: 220px 90px;
+        gap: 5px;
+
+        .divPokemon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .imgPokemon{
+            width: 90px;
+            height: 90px;
+
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

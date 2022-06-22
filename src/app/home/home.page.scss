@@ -4,8 +4,27 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
+
+  ion-item{
+    // display: grid;
+    // grid-template-columns: 2;
+
+
+    // justify-content: space-between;
+    div{
+      // align-items: center;
+      width: 100%;
+
+      ion-button{
+        margin: 5%;
+        // padding: 5%;
+        height: 35px;
+      }
+    }
+    
+  }
 }
 
 #container strong {

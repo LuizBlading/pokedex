@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'pokemons',
+    loadChildren: () => import('./pokemons/pokemons.module').then( m => m.PokemonsPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      PokéDex
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-title>PokéDex</ion-title>
+
+    <ion-item>
+      <div>
+        <!-- <ion-button expand="block" color="success" [routerLink]="['/pokemons']"></ion-button> -->
+        <ion-button expand="block" color="success" [routerLink]="['/pokemons']">Pokémons</ion-button>
+        <ion-button expand="block" color="danger">Abilidades</ion-button>
+        <ion-button expand="block" color="danger">Items</ion-button>
+        <ion-button expand="block" color="danger">Berries</ion-button>
+      </div>
+    </ion-item>
   </div>
 </ion-content>
+
+<app-tab-bar></app-tab-bar>
