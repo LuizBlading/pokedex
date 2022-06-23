@@ -20,19 +20,26 @@
 
   <div *ngIf="isRequest">
     <ion-card *ngFor="let pokemon of pokemonObjResponse">
-      <div>
+      <div class="infoPokemon">
         <ion-card-header>
           <ion-card-title class="title">{{pokemon.name}}</ion-card-title>
           <ion-card-subtitle># {{pokemon.id}}</ion-card-subtitle>
         </ion-card-header>
       
-        <ion-card-content>
-          Descrição ou algo do tipo
-        </ion-card-content>
+        <div class="typesPokemon">
+          <ion-card-content *ngIf="hasType1">
+            {{pokemon.types[0] != null ? pokemon.types[0].type.name : ' '}}
+          </ion-card-content>
+          <ion-card-content *ngIf="hasType2 == true">
+            {{pokemon.types[1] != null ? pokemon.types[1].type.name : ' '}}
+          </ion-card-content>
+        </div>
       </div>
 
       <div class="divPokemon">
-        <ion-img [src]="pokemon.sprites.front_default" class="imgPokemon"></ion-img>
+        <div>
+          <ion-img [src]="pokemon.sprites.front_default" class="imgPokemon"></ion-img>
+        </div>
       </div>
     </ion-card>  
   </div>

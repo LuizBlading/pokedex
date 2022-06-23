@@ -1,5 +1,5 @@
 ion-content{
-    // background-color: #000;
+
     .container{
         margin: 5px;
         padding: 15px;
@@ -14,7 +14,6 @@ ion-content{
     }
 
     ion-input{
-        // margin: 5px;
         border: 1px solid #ccc;
         border-radius: 25px;
         padding: 15px;
@@ -27,22 +26,77 @@ ion-content{
 
     ion-card{
         border-radius: 15px;
-        // background-color: #982237;
+        // background-color: #982237; boa cor para usar depois
         display: grid;
-        grid-template-columns: 220px 90px;
+        grid-template-columns: 60% 40%;
         gap: 5px;
+
+        .infoPokemon{
+            display: flex;
+            // align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin-left: 5%;
+
+            ion-card-header{
+                text-align: left;
+                font-size: 1em;
+            }
+        }
 
         .divPokemon{
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: right;
+            // background-color: white;
+
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: right;
+                height: 100%;
+                width: 90%;
+
+                // background-color: #234258;
+                background-color: #000;
+               
+                border-radius: 45% 0px 0px 45%;
+            }
         }
         .imgPokemon{
-            width: 90px;
-            height: 90px;
+            // width: 90px;
+            // height: 90px;
+            width: 85%;
+            height: 85%;
+
+            // background-color: #000;
+            // border-radius: 100px 0px 0px 100px;
 
             align-items: center;
-            justify-content: center;
+            // justify-content: right;
         }
+        .typesPokemon{
+            display: flex;
+            margin-left: 10px;
+
+            ion-card-content{
+                margin: 0 5px 10px 5px;
+                width: 80px;
+                padding: 5px;
+                border-radius: 10px;
+                background-color: #ccc;
+                color: #000;
+
+                font-weight: bold;
+                font-size: 10px;
+                text-transform: capitalize;
+                text-align: center;
+            }
+        }
+
+        // ion-card-content{
+        //     margin: 0;
+        // }
     }
 }
