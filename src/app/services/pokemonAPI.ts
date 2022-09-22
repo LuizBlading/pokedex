@@ -17,8 +17,4 @@ export class PokemonAPI {
     getPokemonById(pokemonID){
         return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${pokemonID}/`).toPromise();
     }
-
-    teste(uf){
-        return this.http.get<any>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/distritos`, {headers: this.header}).toPromise();
-    }
 }
