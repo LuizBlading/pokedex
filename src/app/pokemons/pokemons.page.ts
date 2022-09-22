@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokemonAPI } from '../services/pokemonAPI';
 
+
 @Component({
   selector: 'app-pokemons',
   templateUrl: './pokemons.page.html',
@@ -19,7 +20,8 @@ export class PokemonsPage implements OnInit {
   public hasType2: Boolean;
 
   constructor(
-    private pokemonService: PokemonAPI
+    private pokemonService: PokemonAPI,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -51,6 +53,11 @@ export class PokemonsPage implements OnInit {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  detalhesPokemon(pokemon){
+    // console.log('Detalhes Pokemon: ', pokemon);
+    this.router.navigate(['/detalhes-pokemon'], {state: {pokemon: pokemon}})
   }
 
 }

@@ -6,20 +6,19 @@
 
 
 <ion-content [fullscreen]="false">
-  <div class="container">
+  <!-- <div class="container">
     <ion-title>Pesquise por nome:</ion-title>
 
     <form>
       <ion-input typ="text" [value]="pokemon" aria-placeholder="Pokémon"></ion-input>
-      <!-- <ion-input expand="block"></ion-input> -->
     </form>
     <div>
       <ion-button expand="block" color="primary" (click)="getPokemonById()">Buscar</ion-button>
     </div>
-  </div>
+  </div> -->
 
   <div *ngIf="isRequest">
-    <ion-card *ngFor="let pokemon of pokemonObjResponse">
+    <ion-card *ngFor="let pokemon of pokemonObjResponse" (click)="getdados()">
       <div class="infoPokemon">
         <ion-card-header>
           <ion-card-title class="title">{{pokemon.name}}</ion-card-title>
