@@ -1,7 +1,8 @@
 {
   "name": "PokeDex",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

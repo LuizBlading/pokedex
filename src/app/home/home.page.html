@@ -7,6 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="boxTitle">
+    <ion-img [src]="'/assets/Pokeball.svg'" id="pokeball"></ion-img>
+    <!-- <img src="pokemonImg" id="pokeball"> -->
+    <h1 class="theTitle">Pokémon</h1>
+  </div>
+  <ion-searchbar animated="true" showCancelButton="focus" placeholder="Search" class="searchbar"></ion-searchbar>
   <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
@@ -14,17 +20,35 @@
   </ion-header> -->
 
   <div id="container">
-    <ion-title>PokéDex</ion-title>
+    <!-- Versão antiga -->
+    <!-- <ion-title>PokéDex</ion-title>
 
     <ion-item>
       <div>
-        <!-- <ion-button expand="block" color="success" [routerLink]="['/pokemons']"></ion-button> -->
         <ion-button expand="block" color="success" [routerLink]="['/pokemons']">Pokémons</ion-button>
         <ion-button expand="block" color="danger">Abilidades</ion-button>
         <ion-button expand="block" color="danger">Items</ion-button>
         <ion-button expand="block" color="danger">Berries</ion-button>
       </div>
-    </ion-item>
+    </ion-item> -->
+
+
+    <div id="cards">
+      <div id="pokemon_card" *ngFor="let pokemon of pokemonObjResponse" [ngStyle]="{'border-color':getColor(pokemon.types[0].type.name)}">
+        <div class="dex_number">
+          <h2 [ngStyle]="{'color':getColor(pokemon.types[0].type.name)}"># {{pokemon.id}}</h2>
+        </div>
+
+        <div class="dex_img">
+          <ion-img [src]="pokemon.sprites.front_default" class="imgPokemon"></ion-img>
+        </div>
+
+        <div class="dex_nome" [ngStyle]="{'background-color':getColor(pokemon.types[0].type.name)}">
+          <p>{{pokemon.name}}</p>
+        </div>
+
+      </div>
+    </div>
   </div>
 </ion-content>
 

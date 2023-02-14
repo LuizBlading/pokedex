@@ -17,4 +17,8 @@ export class PokemonAPI {
     getPokemonById(pokemonID){
         return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${pokemonID}/`).toPromise();
     }
+
+    getPokemonColor(){
+        return this.http.get<any>('https://pokeapi.co/api/v2/pokemon-color/').toPromise();
+    }
 }

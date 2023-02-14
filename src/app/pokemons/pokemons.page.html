@@ -6,7 +6,7 @@
 
 
 <ion-content [fullscreen]="false">
-  <!-- <div class="container">
+  <div class="container">
     <ion-title>Pesquise por nome:</ion-title>
 
     <form>
@@ -15,7 +15,7 @@
     <div>
       <ion-button expand="block" color="primary" (click)="getPokemonById()">Buscar</ion-button>
     </div>
-  </div> -->
+  </div>
 
   <div *ngIf="isRequest">
     <ion-card *ngFor="let pokemon of pokemonObjResponse" (click)="getdados()">
@@ -43,6 +43,7 @@
     </ion-card>  
   </div>
   
+  <!-- TODO: Criar o fluxo pra ir pra tela com o Pokemon e seus dados ao clicar no card. -->
 
   <!-- <app-pokemon-card ></app-pokemon-card> -->
 </ion-content>
