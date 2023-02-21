@@ -29,27 +29,34 @@ export class PokemonsPage implements OnInit {
 
   async getPokemonById() {
     try {
-      for(let indice of this.indices ){
-        const response = await this.pokemonService.getPokemonById(indice);
 
-        if (response) {
-          this.imgPokemon = response.sprites.front_default;
-          this.pokemonObjResponse.push(response);
-          this.isRequest = true;    
+      // Tentando trazer pokemons por limite
+      // const response = await this.pokemonService.getPokemonsByLimit(20);
+
+       // Tentando trazer pokemons por limite
+     
+
+      // for(let indice of this.indices ){
+      //   const response = await this.pokemonService.getPokemonById(indice);
+
+      //   if (response) {
+      //     this.imgPokemon = response.sprites.front_default;
+      //     this.pokemonObjResponse.push(response);
+      //     this.isRequest = true;    
           
-          if(response.types[0] != null){
-            this.hasType1 = true;
-          } else {
-            this.hasType1 = false;
-          }
+      //     if(response.types[0] != null){
+      //       this.hasType1 = true;
+      //     } else {
+      //       this.hasType1 = false;
+      //     }
 
-          if(response.types[1] != null){
-            this.hasType2 = true;
-          } else {
-            this.hasType2 = false;
-          }
-        }
-      }
+      //     if(response.types[1] != null){
+      //       this.hasType2 = true;
+      //     } else {
+      //       this.hasType2 = false;
+      //     }
+      //   }
+      // }
     } catch (e) {
       console.log(e);
     }

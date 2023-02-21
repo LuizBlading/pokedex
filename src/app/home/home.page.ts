@@ -11,6 +11,7 @@ import { PokemonAPI } from '../services/pokemonAPI';
 export class HomePage {
 
   public pokemonObjResponse = [];
+  public pokemons = [];
   public namePokemon: String;
   public isRequest: Boolean;
   public indices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
@@ -26,18 +27,24 @@ export class HomePage {
 
   ngOnInit() {
     this.getPokemonById();
+    
   }
 
   async getPokemonById() {
     try {
-      for (let indice of this.indices) {
-        const response = await this.pokemonService.getPokemonById(indice);
+      const response = await this.pokemonService.getPokemonsByLimit(51,100);
+      this.pokemons = response.results;
+      console.log("Lista Pokemons")
+      console.log(this.pokemons)
+      
+      for (let pokemon of this.pokemons) {
+        const response = await this.pokemonService.getPokemonByURL(pokemon.url);
+        let pokemonPesquisado = response;
+        console.log(pokemonPesquisado)
 
-        console.log(response)
-
-        if (response) {
-          this.imgPokemon = response.sprites.front_default;
-          this.pokemonObjResponse.push(response);
+        if (pokemonPesquisado) {
+          this.imgPokemon = pokemonPesquisado.sprites.front_default;
+          this.pokemonObjResponse.push(pokemonPesquisado);
           this.isRequest = true;
 
           if (response.types[0] != null) {
@@ -86,7 +93,7 @@ export class HomePage {
         return '#E69EAC';
       case 'normal':
         return '#AAA67F';
-      case 'fight':
+      case 'fighting':
         return '#C12239';
       case 'flying':
         return '#A891EC';

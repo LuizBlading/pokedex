@@ -18,7 +18,16 @@ export class PokemonAPI {
         return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${pokemonID}/`).toPromise();
     }
 
+    getPokemonByURL(pokemonURL: string){
+        return this.http.get<any>(pokemonURL).toPromise();
+    }
+
     getPokemonColor(){
         return this.http.get<any>('https://pokeapi.co/api/v2/pokemon-color/').toPromise();
+    }
+
+    getPokemonsByLimit(limit: Number, start: Number){
+        return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${start}`).toPromise();
+    
     }
 }
