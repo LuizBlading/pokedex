@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokemonAPI } from '../services/pokemonAPI';
+// import { Storage }from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  providers: [PokemonAPI]
+  providers: [PokemonAPI, Storage]
 })
 export class HomePage {
 
@@ -22,7 +23,8 @@ export class HomePage {
 
   constructor(
     private pokemonService: PokemonAPI,
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ) { }
 
   ngOnInit() {
@@ -66,6 +68,11 @@ export class HomePage {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  async detailPokemon(){
+    this.storage.set("NamePokemon","Charizard")
+    await this.router.navigateByUrl("/detalhes-pokemon");
   }
 
   // https://codecraft.tv/courses/angular/built-in-directives/ngstyle-and-ngclass/

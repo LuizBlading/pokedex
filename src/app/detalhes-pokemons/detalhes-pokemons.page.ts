@@ -18,10 +18,10 @@ export class DetalhesPokemonsPage implements OnInit {
     { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(() => {    
-      this.pokemon = this.router.getCurrentNavigation().extras.state.pokemon;
-      console.log(this.pokemon)
-    })
+    // this.route.queryParams.subscribe(() => {    
+    //   this.pokemon = this.router.getCurrentNavigation().extras.state.pokemon;
+    //   console.log(this.pokemon)
+    // })
   }
 
 }

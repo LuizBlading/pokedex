@@ -34,7 +34,9 @@
 
 
     <div id="cards">
-      <div id="pokemon_card" *ngFor="let pokemon of pokemonObjResponse" [ngStyle]="{'border-color':getColor(pokemon.types[0].type.name)}">
+      <div id="pokemon_card" *ngFor="let pokemon of pokemonObjResponse" 
+          [ngStyle]="{'border-color':getColor(pokemon.types[0].type.name)}"
+          (click)="detailPokemon()">
         <div class="dex_number">
           <h2 [ngStyle]="{'color':getColor(pokemon.types[0].type.name)}"># {{pokemon.id}}</h2>
         </div>
